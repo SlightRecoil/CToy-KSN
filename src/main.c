@@ -1,5 +1,5 @@
 
-#define CTOY_SAMPLE 8// change me
+#define CTOY_SAMPLE 9// change me
 
 // samples
 #if CTOY_SAMPLE == 1
@@ -25,5 +25,11 @@
 
 #elif CTOY_SAMPLE == 8
 #include "sample/bomber.c"
+
+
+// my code
+#elif CTOY_SAMPLE == 9
+#include "bmp_reader.c"
+
 
 #endif

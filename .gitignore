@@ -1,10 +1,13 @@
+CToy
+CToy_player
+data/hello_world.png
+include/
+lib/
+ibtcc.so
+tool/
+x86-64/
+src/cimgui
+src/sample
+src/test
+src/util
 
-
-*
-
-
-!.gitignore
-
-
-!data/
-!src/
