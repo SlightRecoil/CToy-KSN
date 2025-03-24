@@ -5,6 +5,7 @@ typedef struct {
     size_t size;
 } MEMPTR;
 
+// Plan for functions: readFileToMemory(const char * filename) and uint8_t readBYTE( uint8_t *data, size_t offset)
 MEMPTR readFileToMemory(const char *filename) {
     MEMPTR mem = {NULL, 0};
     FILE *fp = fopen(filename, "rb");
@@ -50,8 +51,11 @@ uint8_t readBYTE(uint8_t *data, size_t offset, size_t size) {
 void ctoy_begin() {
     printf("Hello, World!\n");
     const char* fname = "data/tetris.bmp";
+
+    // aufgabe: open and read the file into memory
     MEMPTR mem = readFileToMemory(fname);
 
+    // aufgabe: handle errors from malloc and fread
     if (!mem.ptr) {
         return;
     }
@@ -62,6 +66,22 @@ void ctoy_begin() {
 
     free(mem.ptr);
 }
+
+    //✅ fehlerbehandlung malloc, fread
+    //✅ in einer func readFileToMemory( const char *filename)
+    //✅ returnwert: struct (ptr, size) ; typedef MEMPTR
+    //✅ unit8_t readBYTE(unit_8 *data, size_t offset)
+    //unit16_t readword(unit_8 *data, size_t offset)
+    //uint32 readdoubleworld(unit_8 *data, size_t offset)
+    //int32 readlong(unit_8 *data, size_t offset)
+    // IMPORTANT: NOTE WHICH NEED LITTLE AND BIG ENDIAN
+/* H Ü
+
+assignHead() // Weißt BAR zag den richtigen speicher orten zu. Danach soll zag.bfSize gehen
+printHead() // Prints the full 14 Byte header
+
+*/
+
 
 void ctoy_main_loop() // called at every update of the main loop
 {}
